@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="Digital Bank Health Check">
+        <groups>
+            <run>
+                <include name="health_check" />
+            </run>
+        </groups>
+        <classes>
+            <class name="mytest.DigitalBankSampleTestNGTest" />
+        </classes>
+    </test>
+</suite>
