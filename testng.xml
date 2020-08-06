@@ -2,6 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
     <test name="Digital Bank Health Check">
+        <parameter name="username" value="jsmith@demo.io"/>
+        <parameter name="password" value="Demo123!"/>
         <groups>
             <run>
                 <include name="health_check" />

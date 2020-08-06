@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class DigitalBankSampleTestNGTest {
@@ -27,13 +28,14 @@ public class DigitalBankSampleTestNGTest {
     }
 
     @Test(priority = 0, groups = {"health_check"})
-    public void verifyLogin(){
+    @Parameters({"username", "password"})
+    public void verifyLogin(String username, String password){
 
         WebElement element=driver.findElement(By.xpath("//input[@name='username']"));
-        element.sendKeys("jsmith@demo.io");
+        element.sendKeys(username);
 
         element=driver.findElement(By.xpath("//input[@name='password']"));
-        element.sendKeys("Demo123!");
+        element.sendKeys(password);
 
         WebElement button=driver.findElement(By.id("submit"));
         button.click();
@@ -45,7 +47,7 @@ public class DigitalBankSampleTestNGTest {
 
     @Test(priority = 1, groups = {"health_check"})
     public void checkWidget(){
-        WebElement element=driver.findElement(By.xpath("//*[@id=\"balanceSummary\"]"));
+        WebElement element=driver.findElement(By.id("balanceSummary"));
         Assert.assertTrue(element.isDisplayed());
     }
 
