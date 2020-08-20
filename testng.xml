@@ -22,6 +22,7 @@
         <parameter name="username" value="jsmith@demo.io"/>
         <parameter name="password" value="Demo123!"/>
         <groups>
+            <!--comment-->
             <run>
                 <include name="health_check" />
             </run>
