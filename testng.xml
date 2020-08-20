@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-    <test name="Digital Bank Health Check">
+<suite name="Suite" thread-count="2" parallel="tests">
+    <listeners>
+        <listener class-name="mytest.ListenerTest"></listener>
+    </listeners>
+    <test name="Digital Bank Health Check - ChromeTest">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="username" value="jsmith@demo.io"/>
+        <parameter name="password" value="Demo123!"/>
+        <groups>
+            <run>
+                <include name="health_check" />
+            </run>
+        </groups>
+        <classes>
+            <class name="mytest.DigitalBankSampleTestNGTest" />
+        </classes>
+    </test>
+    <test name="Digital Bank Health Check - EdgeTest">
+        <parameter name="browser" value="Edge"/>
         <parameter name="username" value="jsmith@demo.io"/>
         <parameter name="password" value="Demo123!"/>
         <groups>
