@@ -52,7 +52,7 @@ public class DigitalBankSampleTestNGTest {
         wait = new WebDriverWait(driver, 10);
     }
 
-    @Test(priority = 0, groups = {"health_check"})
+    @Test(groups = {"health_check"})
     @Parameters({"username", "password"})
     public void verifyLogin(String username, String password){
 
@@ -73,7 +73,7 @@ public class DigitalBankSampleTestNGTest {
     @Test(priority = 1, groups = {"health_check"})
     public void checkWidget(){
         WebElement element=driver.findElement(By.id("balanceSummary"));
-        Assert.assertTrue(element != null);
+        Assert.assertNotNull(element);
     }
 
     @Test(priority = 2, groups = {"health_check"}, singleThreaded = true)
