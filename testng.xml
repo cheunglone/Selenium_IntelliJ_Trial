@@ -4,19 +4,6 @@
     <listeners>
         <listener class-name="mytest.ListenerTest"></listener>
     </listeners>
-    <test name="Digital Bank Health Check - ChromeTest">
-        <parameter name="browser" value="Chrome"/>
-        <parameter name="username" value="jsmith@demo.io"/>
-        <parameter name="password" value="Demo123!"/>
-        <groups>
-            <run>
-                <include name="health_check" />
-            </run>
-        </groups>
-        <classes>
-            <class name="mytest.DigitalBankSampleTestNGTest" />
-        </classes>
-    </test>
     <test name="Digital Bank Health Check - EdgeTest">
         <parameter name="browser" value="Edge"/>
         <parameter name="username" value="jsmith@demo.io"/>
