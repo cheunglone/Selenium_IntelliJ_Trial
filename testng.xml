@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" thread-count="2" parallel="tests">
+<suite name="Suite">
     <listeners>
-        <listener class-name="mytest.ListenerTest"></listener>
+        <listener class-name="mytest.ListenerTest"/>
     </listeners>
     <test name="Digital Bank Health Check - EdgeTest">
         <parameter name="browser" value="Edge"/>
         <parameter name="username" value="jsmith@demo.io"/>
         <parameter name="password" value="Demo123!"/>
         <groups>
-            <!--comment-->
             <run>
                 <include name="health_check" />
             </run>
