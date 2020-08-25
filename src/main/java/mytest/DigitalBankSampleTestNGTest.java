@@ -52,7 +52,7 @@ public class DigitalBankSampleTestNGTest {
         wait = new WebDriverWait(driver, 10);
     }
 
-    @Test(groups = {"health_check"})
+    @Test(priority = 0, groups = {"health_check"})
     @Parameters({"username", "password"})
     public void verifyLogin(String username, String password){
 
@@ -85,7 +85,7 @@ public class DigitalBankSampleTestNGTest {
         //WebDriverWait wait=new WebDriverWait(driver, 5);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.className("card-title text-white")));
 
-        Select drpAccount=new Select(driver.findElement(By.xpath("//*[@id=\"id\"]")));
+        Select drpAccount=new Select(driver.findElement(By.xpath("//*[@id=\"selectedAccount\"]")));
         drpAccount.selectByValue("95");
 
         String amount = "234.56";
