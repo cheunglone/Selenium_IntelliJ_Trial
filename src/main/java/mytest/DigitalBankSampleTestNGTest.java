@@ -7,6 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,20 +32,22 @@ public class DigitalBankSampleTestNGTest {
         //Check if parameter passed as 'chrome'
         if(browser.equalsIgnoreCase("chrome")) {
 
+            /*
             //set chrome driver path
             String filePath = System.getProperty("user.dir");
             System.out.println("Path: " + filePath);
             System.setProperty("webdriver.chrome.driver", filePath + "/lib/chromedriver85.exe");
+            */
 
             //set headless
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
-            driver = new ChromeDriver(chromeOptions);
+            //driver = new ChromeDriver(chromeOptions);
 
             //chromeOptions.setCapability("browserVersion", "85");
-            //chromeOptions.setCapability("platformName", "Windows XP");
+            //chromeOptions.setCapability("platformName", "Windows 10");
 
-            //driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
         }
         /*
         //Check if parameter passed as 'firefox'
