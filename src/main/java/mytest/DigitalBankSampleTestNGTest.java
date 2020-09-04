@@ -28,7 +28,10 @@ public class DigitalBankSampleTestNGTest {
         if(browser.equalsIgnoreCase("chrome")) {
 
             //System.setProperty("webdriver.chrome.driver", "C:\\temp\\chromedriver84.exe");
-            System.setProperty("webdriver.chrome.driver", "/webdriver/bin/chromedriver85.exe");
+            String filePath = System.getProperty("user.dir");
+            System.out.println("Path: " + filePath);
+            //System.setProperty("webdriver.chrome.driver", "/webdriver/bin/chromedriver85.exe");
+            System.setProperty("webdriver.chrome.driver", filePath + "/lib/chromedriver85.exe");
             driver = new ChromeDriver();
         }
         /*
