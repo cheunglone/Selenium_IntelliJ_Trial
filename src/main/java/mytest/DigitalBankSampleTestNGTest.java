@@ -26,7 +26,9 @@ public class DigitalBankSampleTestNGTest {
     public void setBaseURL(String browser) throws Exception{
         //Check if parameter passed as 'chrome'
         if(browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:\\temp\\chromedriver84.exe");
+
+            //System.setProperty("webdriver.chrome.driver", "C:\\temp\\chromedriver84.exe");
+            System.setProperty("webdriver.chrome.driver", "/webdriver/bin/chromedriver85.exe");
             driver = new ChromeDriver();
         }
         /*
