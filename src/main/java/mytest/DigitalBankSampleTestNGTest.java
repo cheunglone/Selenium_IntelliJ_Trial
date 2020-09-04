@@ -27,12 +27,20 @@ public class DigitalBankSampleTestNGTest {
         //Check if parameter passed as 'chrome'
         if(browser.equalsIgnoreCase("chrome")) {
 
-            //System.setProperty("webdriver.chrome.driver", "C:\\temp\\chromedriver84.exe");
+            //set chrome driver path
             String filePath = System.getProperty("user.dir");
             System.out.println("Path: " + filePath);
-            //System.setProperty("webdriver.chrome.driver", "/webdriver/bin/chromedriver85.exe");
             System.setProperty("webdriver.chrome.driver", filePath + "/lib/chromedriver85.exe");
-            driver = new ChromeDriver();
+
+            //set headless
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless");
+            driver = new ChromeDriver(chromeOptions);
+
+            //chromeOptions.setCapability("browserVersion", "85");
+            //chromeOptions.setCapability("platformName", "Windows XP");
+
+            //driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
         }
         /*
         //Check if parameter passed as 'firefox'
