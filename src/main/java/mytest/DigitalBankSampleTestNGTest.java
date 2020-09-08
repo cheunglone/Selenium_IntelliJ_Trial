@@ -39,17 +39,17 @@ public class DigitalBankSampleTestNGTest {
             String filePath = System.getProperty("user.dir");
             System.out.println("Path: " + filePath);
             System.setProperty("webdriver.chrome.driver", filePath + "/lib/chromedriver85.exe");
+            //driver = new ChromeDriver(chromeOptions);
             */
 
-            //set headless
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--headless");
-            //driver = new ChromeDriver(chromeOptions);
+            //set headless
+            //chromeOptions.addArguments("--headless");
 
             //chromeOptions.setCapability("browserVersion", "85");
             //chromeOptions.setCapability("platformName", "Windows 10");
 
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+            driver = new RemoteWebDriver(new URL("http://192.168.0.100:4444/wd/hub"), chromeOptions);
         }
         /*
         //Check if parameter passed as 'firefox'
