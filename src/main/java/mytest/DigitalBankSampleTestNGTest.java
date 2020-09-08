@@ -48,6 +48,7 @@ public class DigitalBankSampleTestNGTest {
 
             //chromeOptions.setCapability("browserVersion", "85");
             //chromeOptions.setCapability("platformName", "Windows 10");
+            chromeOptions.setCapability("enableNetwork", true);
 
             driver = new RemoteWebDriver(new URL("http://192.168.0.100:4444/wd/hub"), chromeOptions);
         }
